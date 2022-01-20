@@ -1,0 +1,14 @@
+{
+  "name": "wordle",
+  "version": "1.0.0",
+  "description": "Wordle solution",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "author": "Milton Chandradas",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
