@@ -1,3 +1,8 @@
 const { getNextWord} = require("./utils");
 
-console.log(getNextWord([], [], [], []));
+let excludeLetters = [];
+let includeLetters = [];
+let exactMatches = [];
+let notExactMatches = [];
+
+console.log(getNextWord(excludeLetters, includeLetters, exactMatches, notExactMatches));

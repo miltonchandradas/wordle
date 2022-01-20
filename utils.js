@@ -4,33 +4,6 @@ const getRandomWord = () => {
    return words[Math.floor(Math.random() * words.length)];
 };
 
-// const getNextWord = (excludeLetters, includeLetters, exactMatches) => {
-
-//     let filteredExcludedWords = words.reduce((accumulator, word) => {
-//         if (excludeLetters.every(excludeLetter => !word.includes(excludeLetter)))
-//         accumulator.push(word);
-
-//         return accumulator;
-//     }, []);
-
-//     filteredIncludedWords = filteredExcludedWords.reduce((accumulator, word) => {
-//         if (includeLetters.every(includeLetter => word.includes(includeLetter)))
-//         accumulator.push(word);
-
-//         return accumulator;
-//     }, []);
-
-//     filteredExactMatchWords = filteredIncludedWords.reduce((accumulator, word) => {
-//         if (exactMatches.every(exactMatch => word[exactMatch.position] === exactMatch.value))
-//         accumulator.push(word);
-
-//         return accumulator;
-//     }, []);
-
-//     return filteredExactMatchWords[0];
-
-// };
-
 const getNextWord = (excludeLetters, includeLetters, exactMatches, notExactMatches) => {
    const filterExactMatchWords = (accumulator, word) => {
       if (
