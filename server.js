@@ -1,4 +1,4 @@
-const { getNextWord } = require("./utils");
+const { getNextWord, getSolution, getSolutions } = require("./utils");
 const express = require("express");
 const app = express();
 
@@ -36,6 +36,18 @@ app.get("/", (req, res) => {
       notExactMatches
    );
    res.status(201).json({ nextWord });
+});
+
+
+app.get("/solve", (req, res) => {
+
+   let solution = getSolution();
+   res.status(201).json({ solution });
+});
+
+app.get("/solutions", (req, res) => {
+
+   res.status(201).json({ solutions: getSolutions() });
 });
 
 app.listen(PORT, () => {

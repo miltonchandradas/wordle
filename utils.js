@@ -1,10 +1,27 @@
 const words = require("./data.json");
+const solutions = require("./solution.json");
 
 const getRandomWord = () => {
    return words[Math.floor(Math.random() * words.length)];
 };
 
-const getNextWord = (excludeLetters, includeLetters, exactMatches, notExactMatches) => {
+const getSolution = () => {
+   let startDate = new Date(2021, 5, 19).setHours(0, 0, 0, 0);
+   let today = new Date().setHours(0, 0, 0, 0);
+
+   return solutions[Math.round((today - startDate) / 86400000) % solutions.length];
+};
+
+const getSolutions = () => {
+   return solutions;
+}
+
+const getNextWord = (
+   excludeLetters,
+   includeLetters,
+   exactMatches,
+   notExactMatches
+) => {
    const filterExactMatchWords = (accumulator, word) => {
       if (
          exactMatches.every(
@@ -18,7 +35,8 @@ const getNextWord = (excludeLetters, includeLetters, exactMatches, notExactMatch
    const filterNotExactMatchWords = (accumulator, word) => {
       if (
          notExactMatches.every(
-            (notExactMatch) => word[notExactMatch.position] !== notExactMatch.value
+            (notExactMatch) =>
+               word[notExactMatch.position] !== notExactMatch.value
          )
       )
          accumulator.push(word);
@@ -61,4 +79,6 @@ const getNextWord = (excludeLetters, includeLetters, exactMatches, notExactMatch
 module.exports = {
    getRandomWord,
    getNextWord,
+   getSolution,
+   getSolutions,
 };
