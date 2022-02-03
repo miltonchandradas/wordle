@@ -41,7 +41,9 @@ app.get("/", (req, res) => {
 
 app.get("/solve", (req, res) => {
 
-   let solution = getSolution();
+   let date = req.query.date ? req.query.date.split("-") : [];
+
+   let solution = getSolution(date);
    res.status(201).json({ solution });
 });
 

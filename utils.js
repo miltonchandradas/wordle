@@ -5,9 +5,13 @@ const getRandomWord = () => {
    return words[Math.floor(Math.random() * words.length)];
 };
 
-const getSolution = () => {
+const getSolution = (date) => {
+
    let startDate = new Date(2021, 5, 19).setHours(0, 0, 0, 0);
-   let today = new Date().setHours(0, 0, 0, 0);
+   let today = new Date();
+
+   if (date)
+      today = new Date(...date).setHours(0, 0, 0, 0);
 
    return solutions[Math.round((today - startDate) / 86400000) % solutions.length];
 };
