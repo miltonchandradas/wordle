@@ -4,13 +4,10 @@
   "description": "Wordle solution",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "node server"
   },
   "author": "Milton Chandradas",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
   "dependencies": {
     "express": "^4.17.2"
   }

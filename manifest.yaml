@@ -1,0 +1,10 @@
+applications:
+- name: wordle
+  instances: 1
+  memory: 128M
+  routes:
+    - route: wordle-i825339.cfapps.eu10.hana.ondemand.com
+  path: 
+  buildpacks:
+    - nodejs_buildpack  
+  timeout: 180
